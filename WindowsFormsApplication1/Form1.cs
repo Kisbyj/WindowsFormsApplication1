@@ -15,6 +15,7 @@ namespace WindowsFormsApplication1
     {
         SqlConnection mySqlConnection;
 
+    
         	public void populateListBox()
     	{
        	mySqlConnection =
