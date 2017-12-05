@@ -109,11 +109,8 @@ namespace WindowsFormsApplication1
         private void button1_Click(object sender, EventArgs e)
         {
             if (checkInputs())
-            {
-               
-
+            {             
                 String commandString = "INSERT INTO Students(studentID, studentName, studentaddress) VALUES (@ID, @name, @address)";
-
                 insertRecord(txtId.Text, txtName.Text, txtAddress.Text, commandString);
                 populateListBox();
                 cleartxtBoxes();
