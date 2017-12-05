@@ -110,7 +110,7 @@ namespace WindowsFormsApplication1
         {
             if (checkInputs())
             {
-                
+               
 
                 String commandString = "INSERT INTO Students(studentID, studentName, studentaddress) VALUES (@ID, @name, @address)";
 
