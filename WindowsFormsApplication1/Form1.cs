@@ -58,7 +58,7 @@ namespace WindowsFormsApplication1
  
     	public void cleartxtBoxes()
     	{
-        	txtId.Text = txtName.Text = txtAddress.Text = "";
+        	txtId.Text = txtName.Text = txtTesting.Text = "";
     	}
  
    public bool checkInputs()
@@ -67,7 +67,7 @@ namespace WindowsFormsApplication1
         	
        	if (string.IsNullOrEmpty(txtId.Text) ||
            	string.IsNullOrEmpty(txtName.Text) ||
-           	string.IsNullOrEmpty(txtAddress.Text))
+           	string.IsNullOrEmpty(txtTesting.Text))
         	{
             	MessageBox.Show("Error: Please check your inputs");
             	rtnvalue = false;
@@ -109,8 +109,8 @@ namespace WindowsFormsApplication1
             if (checkInputs())
             {             
                 String commandString = "INSERT INTO BugTable(ApplicationName, BugDescription, BugOccurence) VALUES (@ID, @name, @address)";
-                insertRecord(txtId.Text, txtName.Text, txtAddress.Text, commandString);
-                populateListBox();
+                insertRecord(txtId.Text, txtName.Text, txtTesting.Text, commandString);
+           //    populateListBox();
                 cleartxtBoxes();
             }
         }

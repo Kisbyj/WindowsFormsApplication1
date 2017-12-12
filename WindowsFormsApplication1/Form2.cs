@@ -24,14 +24,12 @@ namespace WindowsFormsApplication1
 
         private void button2_Click(object sender, EventArgs e)
         {
-
-
-
+            Form3 formThreeTester = new Form3();
+            formThreeTester.Show();
+            this.Hide();
         }
         private void button3_Click(object sender, EventArgs e)
         {
-
-
 
         }
 
@@ -39,10 +37,7 @@ namespace WindowsFormsApplication1
         {
             Form1 formOneTester = new Form1();
             formOneTester.Show();
-            //Application.Run(new Form1());
             this.Hide();
-
-
         }
 
         private void Form2_FormClosed(object sender, FormClosedEventArgs e)

@@ -40,7 +40,7 @@
             this.label1.AutoSize = true;
             this.label1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 9);
+            this.label1.Location = new System.Drawing.Point(38, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(381, 41);
             this.label1.TabIndex = 0;
@@ -50,12 +50,13 @@
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(145, 140);
+            this.button2.Location = new System.Drawing.Point(167, 140);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(127, 58);
             this.button2.TabIndex = 2;
             this.button2.Text = "White Box Tester";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
@@ -71,7 +72,7 @@
             // button3
             // 
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(278, 140);
+            this.button3.Location = new System.Drawing.Point(328, 140);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(127, 58);
             this.button3.TabIndex = 4;
@@ -83,7 +84,7 @@
             this.label2.AutoSize = true;
             this.label2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(123, 104);
+            this.label2.Location = new System.Drawing.Point(132, 74);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(183, 33);
             this.label2.TabIndex = 5;
