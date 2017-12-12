@@ -40,9 +40,15 @@ namespace WindowsFormsApplication1
             Form1 formOneTester = new Form1();
             formOneTester.Show();
             //Application.Run(new Form1());
-            this.Close();
+            this.Hide();
 
 
+        }
+
+        private void Form2_FormClosed(object sender, FormClosedEventArgs e)
+        {
+
+            Application.Exit();
         }
     }
 }
