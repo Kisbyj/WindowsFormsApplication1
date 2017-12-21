@@ -30,7 +30,9 @@ namespace WindowsFormsApplication1
         }
         private void button3_Click(object sender, EventArgs e)
         {
-
+            Form4 formFourTester = new Form4();
+            formFourTester.Show();
+            this.Hide();
         }
 
         private void button1_Click_1(object sender, EventArgs e)
