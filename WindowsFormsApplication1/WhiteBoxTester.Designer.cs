@@ -266,7 +266,6 @@
             this.Name = "WhiteBoxTester";
             this.Text = "White Box Tester";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form3_FormClosed);
-            this.Load += new System.EventHandler(this.WhiteBoxTester_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

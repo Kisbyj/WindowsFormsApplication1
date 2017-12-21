@@ -34,11 +34,11 @@
             this.Bug = new System.Windows.Forms.Label();
             this.bugIDtxt = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.bugFixDetailstxt = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.updateButton = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.label17 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
@@ -63,6 +63,8 @@
             this.bugDesc = new System.Windows.Forms.TextBox();
             this.appName = new System.Windows.Forms.TextBox();
             this.bugTableList = new System.Windows.Forms.ListBox();
+            this.bugList = new System.Windows.Forms.ListBox();
+            this.populateButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -77,7 +79,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(790, 47);
+            this.label13.Location = new System.Drawing.Point(781, 37);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(75, 13);
             this.label13.TabIndex = 53;
@@ -86,7 +88,7 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(1086, 47);
+            this.label14.Location = new System.Drawing.Point(1086, 37);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(113, 13);
             this.label14.TabIndex = 54;
@@ -117,13 +119,13 @@
             this.label15.TabIndex = 60;
             this.label15.Text = "Current Bug Details and Fix Progress";
             // 
-            // textBox7
+            // bugFixDetailstxt
             // 
-            this.textBox7.Location = new System.Drawing.Point(1000, 194);
-            this.textBox7.Multiline = true;
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(299, 239);
-            this.textBox7.TabIndex = 61;
+            this.bugFixDetailstxt.Location = new System.Drawing.Point(1000, 194);
+            this.bugFixDetailstxt.Multiline = true;
+            this.bugFixDetailstxt.Name = "bugFixDetailstxt";
+            this.bugFixDetailstxt.Size = new System.Drawing.Size(299, 239);
+            this.bugFixDetailstxt.TabIndex = 61;
             // 
             // label16
             // 
@@ -136,7 +138,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(1003, 508);
+            this.button2.Location = new System.Drawing.Point(1003, 506);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(104, 42);
             this.button2.TabIndex = 63;
@@ -146,7 +148,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(1183, 506);
+            this.button3.Location = new System.Drawing.Point(1186, 506);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(104, 42);
             this.button3.TabIndex = 64;
@@ -154,18 +156,19 @@
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // button4
+            // updateButton
             // 
-            this.button4.Location = new System.Drawing.Point(1095, 439);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(104, 42);
-            this.button4.TabIndex = 65;
-            this.button4.Text = "Update";
-            this.button4.UseVisualStyleBackColor = true;
+            this.updateButton.Location = new System.Drawing.Point(1095, 439);
+            this.updateButton.Name = "updateButton";
+            this.updateButton.Size = new System.Drawing.Size(104, 42);
+            this.updateButton.TabIndex = 65;
+            this.updateButton.Text = "Update";
+            this.updateButton.UseVisualStyleBackColor = true;
+            this.updateButton.Click += new System.EventHandler(this.button4_Click);
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(1089, 123);
+            this.button5.Location = new System.Drawing.Point(1095, 123);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(104, 42);
             this.button5.TabIndex = 66;
@@ -176,7 +179,7 @@
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(1472, 47);
+            this.label17.Location = new System.Drawing.Point(1467, 37);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(61, 13);
             this.label17.TabIndex = 67;
@@ -282,7 +285,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(460, 37);
+            this.label6.Location = new System.Drawing.Point(452, 37);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(94, 13);
             this.label6.TabIndex = 76;
@@ -299,7 +302,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(294, 496);
+            this.button1.Location = new System.Drawing.Point(294, 506);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(104, 42);
             this.button1.TabIndex = 74;
@@ -356,21 +359,43 @@
             this.appName.Name = "appName";
             this.appName.Size = new System.Drawing.Size(290, 20);
             this.appName.TabIndex = 68;
-            this.appName.TextChanged += new System.EventHandler(this.appName_TextChanged);
             // 
             // bugTableList
             // 
             this.bugTableList.FormattingEnabled = true;
-            this.bugTableList.Location = new System.Drawing.Point(1342, 81);
+            this.bugTableList.HorizontalScrollbar = true;
+            this.bugTableList.Location = new System.Drawing.Point(1305, 84);
             this.bugTableList.Name = "bugTableList";
-            this.bugTableList.Size = new System.Drawing.Size(356, 472);
+            this.bugTableList.Size = new System.Drawing.Size(393, 420);
             this.bugTableList.TabIndex = 89;
+            // 
+            // bugList
+            // 
+            this.bugList.FormattingEnabled = true;
+            this.bugList.HorizontalScrollbar = true;
+            this.bugList.Location = new System.Drawing.Point(681, 71);
+            this.bugList.Name = "bugList";
+            this.bugList.Size = new System.Drawing.Size(310, 433);
+            this.bugList.TabIndex = 90;
+            // 
+            // populateButton
+            // 
+            this.populateButton.Location = new System.Drawing.Point(784, 506);
+            this.populateButton.Name = "populateButton";
+            this.populateButton.Size = new System.Drawing.Size(104, 42);
+            this.populateButton.TabIndex = 91;
+            this.populateButton.Text = "Populate List";
+            this.populateButton.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.populateButton.UseVisualStyleBackColor = true;
+            this.populateButton.Click += new System.EventHandler(this.populateButton_Click);
             // 
             // Developer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1721, 571);
+            this.Controls.Add(this.populateButton);
+            this.Controls.Add(this.bugList);
             this.Controls.Add(this.bugTableList);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.errorMess);
@@ -395,11 +420,11 @@
             this.Controls.Add(this.appName);
             this.Controls.Add(this.label17);
             this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
+            this.Controls.Add(this.updateButton);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.label16);
-            this.Controls.Add(this.textBox7);
+            this.Controls.Add(this.bugFixDetailstxt);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.Bug);
             this.Controls.Add(this.bugIDtxt);
@@ -422,11 +447,11 @@
         private System.Windows.Forms.Label Bug;
         private System.Windows.Forms.TextBox bugIDtxt;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox bugFixDetailstxt;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button updateButton;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label12;
@@ -451,5 +476,7 @@
         private System.Windows.Forms.TextBox bugDesc;
         private System.Windows.Forms.TextBox appName;
         private System.Windows.Forms.ListBox bugTableList;
+        private System.Windows.Forms.ListBox bugList;
+        private System.Windows.Forms.Button populateButton;
     }
 }

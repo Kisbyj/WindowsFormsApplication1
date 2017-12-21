@@ -61,7 +61,6 @@
             this.bugOcc.Name = "bugOcc";
             this.bugOcc.Size = new System.Drawing.Size(287, 149);
             this.bugOcc.TabIndex = 3;
-            this.bugOcc.TextChanged += new System.EventHandler(this.txtAddress_TextChanged);
             // 
             // label1
             // 
@@ -122,7 +121,6 @@
             this.Controls.Add(this.appName);
             this.Name = "BlackBoxTester";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed_1);
-            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

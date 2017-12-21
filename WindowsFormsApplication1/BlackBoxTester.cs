@@ -15,53 +15,44 @@ namespace WindowsFormsApplication1
     {
         SqlConnection mySqlConnection;
 
-        	public void populateListBox()
+        /// <summary>
+        /// SQL Connection Commands to locate the database and select the relevant fields.
+        /// </summary>
+        public void insertBlackBoxData()
     	{
-       	mySqlConnection =
-            	new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=F:\WindowsFormsApplication1\Database1.mdf;Integrated Security=True;Connect Timeout=30 ");
- 
+
+       	mySqlConnection = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=F:\WindowsFormsApplication1\Database1.mdf;Integrated Security=True;Connect Timeout=30 ");
        	String selcmd = "SELECT ApplicationName, BugDescription, BugOccurence FROM BugTable ORDER BY ID";
- 
        	SqlCommand mySqlCommand = new SqlCommand(selcmd, mySqlConnection);
- 
-       	try
-       	{
-           	mySqlConnection.Open();
- 
-           	SqlDataReader mySqlDataReader = mySqlCommand.ExecuteReader();
- 
-          // 	lbxstudents.Items.Clear();
- 
-          // 	while (mySqlDataReader.Read())
-          // 	{
- 
-          //         lbxstudents.Items.Add(mySqlDataReader["studentID"] + " " +
-          //            	mySqlDataReader["studentName"] + mySqlDataReader["studentAddress"]);
- 
- 
-          // 	}
+
+            //SQL Reader Try/Catch
+            try
+            {
+                mySqlConnection.Open();
+                SqlDataReader mySqlDataReader = mySqlCommand.ExecuteReader();
                 mySqlDataReader.Close();
-         	}
+            }
 
+            catch (SqlException ex)
+            {
+                MessageBox.Show(appName + " .." + ex.Message, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
+        }
 
-
-       	catch (SqlException ex)
-       	{
- 
-         	  MessageBox.Show(ex.Message, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
-       	}
- 
-    	}
- 
- 
- 
-    	public void cleartxtBoxes()
+        /// <summary>
+        /// Clear Text box Method
+        /// </summary>
+        public void cleartxtBoxes()
     	{
         	appName.Text = bugDesc.Text = bugOcc.Text = "";
     	}
- 
-   public bool checkInputs()
+
+        /// <summary>
+        /// Performs a check to ensure that the text boxes are not null when submitting data to the database.
+        /// </summary>
+        /// <returns></returns>
+        public bool checkInputs()
     	{
         	bool rtnvalue = true;
         	
@@ -77,8 +68,14 @@ namespace WindowsFormsApplication1
  
     	}
  
- 
-   public void insertRecord(String appName, String bugDesc, String bugOcc, String commandString)
+        /// <summary>
+        /// Insert Record Command to push the text box fields into the table.
+        /// </summary>
+        /// <param name="appName"></param>
+        /// <param name="bugDesc"></param>
+        /// <param name="bugOcc"></param>
+        /// <param name="commandString"></param>
+        public void insertRecord(String appName, String bugDesc, String bugOcc, String commandString)
     	{
 
             try
@@ -90,6 +87,7 @@ namespace WindowsFormsApplication1
                 cmdInsert.Parameters.AddWithValue("@bugOcc", bugOcc);
                 cmdInsert.ExecuteNonQuery();
             }
+
             catch (SqlException ex)
             {
                 MessageBox.Show(appName + " .." + ex.Message, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -97,13 +95,20 @@ namespace WindowsFormsApplication1
 
     	}
 
-
+        /// <summary>
+        /// Initial initialisation.
+        /// </summary>
         public BlackBoxTester()
         {
             InitializeComponent();
-            populateListBox();
+            insertBlackBoxData();
         }
 
+        /// <summary>
+        /// Button1_CLick is the "Add" Command to add to the table.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button1_Click(object sender, EventArgs e)
         {
             if (checkInputs())
@@ -114,19 +119,15 @@ namespace WindowsFormsApplication1
             }
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
+        /// <summary>
+        /// Makes the application end the process on clicking the close button. Prevents the process staying open on close.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Form1_FormClosed_1(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
         }
 
-        private void txtAddress_TextChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }

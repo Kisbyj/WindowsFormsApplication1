@@ -9,9 +9,9 @@ namespace WindowsFormsApplication1
 
     static class Program
     {
-        /// <summary>
-        /// The main entry point for the application.
-        /// </summary>
+       /// <summary>
+       /// This is the main entry point into the application.
+       /// </summary>
         [STAThread]
         static void Main()
         {

@@ -15,15 +15,16 @@ namespace WindowsFormsApplication1
     {
         SqlConnection mySqlConnection;
 
+        /// <summary>
+        /// SQL Connection Commands to locate the database and select the relevant fields.
+        /// </summary>
         public void populateListBox()
         {
-            mySqlConnection =
-                 new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=F:\WindowsFormsApplication1\Database1.mdf;Integrated Security=True;Connect Timeout=30 ");
-
+            mySqlConnection = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=F:\WindowsFormsApplication1\Database1.mdf;Integrated Security=True;Connect Timeout=30 ");
             String selcmd = "SELECT ApplicationName, BugDescription, BugOccurence, SourceFile, ProjectName, ClassName, MethodName, LineNumber, ErrorMessage FROM BugTable ORDER BY ID";
-
             SqlCommand mySqlCommand = new SqlCommand(selcmd, mySqlConnection);
 
+            //SQL Reader Try/Catch
             try
             {
                 mySqlConnection.Open();
@@ -38,6 +39,10 @@ namespace WindowsFormsApplication1
 
         }
 
+        /// <summary>
+        /// Performs a check to ensure that the text boxes are not null when submitting data to the database.
+        /// </summary>
+        /// <returns></returns>
         public bool checkInputs()
         {
             bool rtnvalue = true;
@@ -57,8 +62,21 @@ namespace WindowsFormsApplication1
             }
 
             return (rtnvalue);
-
         }
+
+        /// <summary>
+        /// Insert Record Command to push the text box fields into the table.
+        /// </summary>
+        /// <param name="appName"></param>
+        /// <param name="bugDesc"></param>
+        /// <param name="bugOcc"></param>
+        /// <param name="sourceFile"></param>
+        /// <param name="projectName"></param>
+        /// <param name="className"></param>
+        /// <param name="methodName"></param>
+        /// <param name="lineNumber"></param>
+        /// <param name="errorMess"></param>
+        /// <param name="commandString"></param>
         public void insertRecord(String appName, String bugDesc, String bugOcc, String sourceFile, String projectName, String className, String methodName, String lineNumber, String errorMess, String commandString)
         {
             try
@@ -76,6 +94,7 @@ namespace WindowsFormsApplication1
                 cmdInsert.Parameters.AddWithValue("@errorMess", errorMess);
                 cmdInsert.ExecuteNonQuery();
             }
+
             catch (SqlException ex)
             {
                 MessageBox.Show(appName + " .." + ex.Message, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -83,17 +102,28 @@ namespace WindowsFormsApplication1
 
         }
 
+        /// <summary>
+        /// Clear Text box Method
+        /// </summary>
         public void cleartxtBoxes()
         {
             appName.Text = bugDesc.Text = bugOcc.Text = sourceFile.Text = projectName.Text = className.Text = methodName.Text = lineNumber.Text = errorMess.Text = "";
         }
 
+        /// <summary>
+        /// Initial initialisation.
+        /// </summary>
         public WhiteBoxTester()
         {
             InitializeComponent();
             populateListBox();
         }
 
+        /// <summary>
+        /// Button1_CLick is the "Add" Command to add to the table.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button1_Click(object sender, EventArgs e)
         {
             if (checkInputs())
@@ -103,25 +133,15 @@ namespace WindowsFormsApplication1
                 cleartxtBoxes();
             }
         }
-
-        private void Form3_Load(object sender, EventArgs e)
-        {
-
-        }
-
+        
+        /// <summary>
+        /// Makes the application end the process on clicking the close button. Prevents the process staying open on close.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Form3_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
-        }
-
-        private void txtAddress_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void WhiteBoxTester_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }
