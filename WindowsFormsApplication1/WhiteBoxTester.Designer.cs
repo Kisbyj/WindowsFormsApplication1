@@ -224,9 +224,9 @@
             this.label12.AutoSize = true;
             this.label12.Location = new System.Drawing.Point(379, 322);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(164, 13);
+            this.label12.Size = new System.Drawing.Size(178, 13);
             this.label12.TabIndex = 30;
-            this.label12.Text = "Error or Error Message Displayed:";
+            this.label12.Text = "Error Message and/or Source Code:";
             // 
             // errorMess
             // 

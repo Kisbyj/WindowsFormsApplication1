@@ -145,7 +145,7 @@ namespace WindowsFormsApplication1
                     bugTableList.Items.Add("Class Name: " + mySqlDataReader["ClassName"]);
                     bugTableList.Items.Add("Method Name: " + mySqlDataReader["MethodName"]);
                     bugTableList.Items.Add("Line Number: " + mySqlDataReader["LineNumber"]);
-                    bugTableList.Items.Add("Error Message: " + mySqlDataReader["ErrorMessage"]);
+                    bugTableList.Items.Add("Error Message/Source Code: " + mySqlDataReader["ErrorMessage"]);
                     bugTableList.Items.Add("Is the Bug fixed? " + mySqlDataReader["BugStatus"]);
                     bugTableList.Items.Add("Bug Fix Details: " + mySqlDataReader["BugFixDetails"]);
                     bugTableList.Items.Add("--------------------END----------------------");
@@ -186,7 +186,7 @@ namespace WindowsFormsApplication1
                     bugList.Items.Add("Class Name: " + mySqlDataRead["ClassName"]);
                     bugList.Items.Add("Method Name: " + mySqlDataRead["MethodName"]);
                     bugList.Items.Add("Line Number: " + mySqlDataRead["LineNumber"]);
-                    bugList.Items.Add("Error Message: " + mySqlDataRead["ErrorMessage"]);
+                    bugList.Items.Add("Error Message/Source Code: " + mySqlDataRead["ErrorMessage"]);
                     bugList.Items.Add("Is the Bug fixed? " + mySqlDataRead["BugStatus"]);
                     bugList.Items.Add("Bug Fix Details: " + mySqlDataRead["BugFixDetails"]);
                     bugList.Items.Add("-----------------------------------------------------------------");
