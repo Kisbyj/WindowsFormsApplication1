@@ -10,34 +10,29 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApplication1
 {
-    public partial class Form2 : Form
+    public partial class Launcher : Form
     {
-        public Form2()
+        public Launcher()
         {
             InitializeComponent();
         }
 
-        private void Form2_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void button2_Click(object sender, EventArgs e)
         {
-            Form3 formThreeTester = new Form3();
+            WhiteBoxTester formThreeTester = new WhiteBoxTester();
             formThreeTester.Show();
             this.Hide();
         }
         private void button3_Click(object sender, EventArgs e)
         {
-            Form4 formFourTester = new Form4();
+            Developer formFourTester = new Developer();
             formFourTester.Show();
             this.Hide();
         }
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            Form1 formOneTester = new Form1();
+            BlackBoxTester formOneTester = new BlackBoxTester();
             formOneTester.Show();
             this.Hide();
         }

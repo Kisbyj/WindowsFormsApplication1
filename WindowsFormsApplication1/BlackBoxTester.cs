@@ -11,7 +11,7 @@ using System.Data.SqlClient;
 
 namespace WindowsFormsApplication1
 {
-    public partial class Form1 : Form
+    public partial class BlackBoxTester : Form
     {
         SqlConnection mySqlConnection;
 
@@ -58,16 +58,16 @@ namespace WindowsFormsApplication1
  
     	public void cleartxtBoxes()
     	{
-        	txtId.Text = txtName.Text = txtTesting.Text = "";
+        	appName.Text = bugDesc.Text = bugOcc.Text = "";
     	}
  
    public bool checkInputs()
     	{
         	bool rtnvalue = true;
         	
-       	if (string.IsNullOrEmpty(txtId.Text) ||
-           	string.IsNullOrEmpty(txtName.Text) ||
-           	string.IsNullOrEmpty(txtTesting.Text))
+       	if (string.IsNullOrEmpty(appName.Text) ||
+           	string.IsNullOrEmpty(bugDesc.Text) ||
+           	string.IsNullOrEmpty(bugOcc.Text))
         	{
             	MessageBox.Show("Error: Please check your inputs");
             	rtnvalue = false;
@@ -78,27 +78,27 @@ namespace WindowsFormsApplication1
     	}
  
  
-   public void insertRecord(String ID, String name, String address, String commandString)
+   public void insertRecord(String appName, String bugDesc, String bugOcc, String commandString)
     	{
 
             try
             {
                 SqlCommand cmdInsert = new SqlCommand(commandString, mySqlConnection);
 
-                cmdInsert.Parameters.AddWithValue("@ID", ID);
-                cmdInsert.Parameters.AddWithValue("@name", name);
-                cmdInsert.Parameters.AddWithValue("@address", address);
+                cmdInsert.Parameters.AddWithValue("@appName", appName);
+                cmdInsert.Parameters.AddWithValue("@bugDesc", bugDesc);
+                cmdInsert.Parameters.AddWithValue("@bugOcc", bugOcc);
                 cmdInsert.ExecuteNonQuery();
             }
             catch (SqlException ex)
             {
-                MessageBox.Show(ID + " .." + ex.Message, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(appName + " .." + ex.Message, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
     	}
 
 
-        public Form1()
+        public BlackBoxTester()
         {
             InitializeComponent();
             populateListBox();
@@ -108,9 +108,8 @@ namespace WindowsFormsApplication1
         {
             if (checkInputs())
             {             
-                String commandString = "INSERT INTO BugTable(ApplicationName, BugDescription, BugOccurence) VALUES (@ID, @name, @address)";
-                insertRecord(txtId.Text, txtName.Text, txtTesting.Text, commandString);
-           //    populateListBox();
+                String commandString = "INSERT INTO BugTable(ApplicationName, BugDescription, BugOccurence) VALUES (@appName, @bugDesc, @bugOcc)";
+                insertRecord(appName.Text, bugDesc.Text, bugOcc.Text, commandString);
                 cleartxtBoxes();
             }
         }

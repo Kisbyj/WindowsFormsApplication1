@@ -1,6 +1,6 @@
 ﻿namespace WindowsFormsApplication1
 {
-    partial class Form3
+    partial class WhiteBoxTester
     {
         /// <summary>
         /// Required designer variable.
@@ -33,23 +33,23 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.txtAddress = new System.Windows.Forms.TextBox();
-            this.txtName = new System.Windows.Forms.TextBox();
-            this.txtId = new System.Windows.Forms.TextBox();
+            this.bugOcc = new System.Windows.Forms.TextBox();
+            this.bugDesc = new System.Windows.Forms.TextBox();
+            this.appName = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.projectName = new System.Windows.Forms.TextBox();
+            this.sourceFile = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.className = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.methodName = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.lineNumber = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.errorMess = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -69,6 +69,7 @@
             this.button1.TabIndex = 14;
             this.button1.Text = "Add";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label3
             // 
@@ -97,28 +98,28 @@
             this.label4.TabIndex = 11;
             this.label4.Text = "Application Name:";
             // 
-            // txtAddress
+            // bugOcc
             // 
-            this.txtAddress.Location = new System.Drawing.Point(15, 338);
-            this.txtAddress.Multiline = true;
-            this.txtAddress.Name = "txtAddress";
-            this.txtAddress.Size = new System.Drawing.Size(287, 149);
-            this.txtAddress.TabIndex = 10;
+            this.bugOcc.Location = new System.Drawing.Point(15, 338);
+            this.bugOcc.Multiline = true;
+            this.bugOcc.Name = "bugOcc";
+            this.bugOcc.Size = new System.Drawing.Size(287, 149);
+            this.bugOcc.TabIndex = 10;
             // 
-            // txtName
+            // bugDesc
             // 
-            this.txtName.Location = new System.Drawing.Point(12, 151);
-            this.txtName.Multiline = true;
-            this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(290, 160);
-            this.txtName.TabIndex = 9;
+            this.bugDesc.Location = new System.Drawing.Point(12, 151);
+            this.bugDesc.Multiline = true;
+            this.bugDesc.Name = "bugDesc";
+            this.bugDesc.Size = new System.Drawing.Size(290, 160);
+            this.bugDesc.TabIndex = 9;
             // 
-            // txtId
+            // appName
             // 
-            this.txtId.Location = new System.Drawing.Point(12, 103);
-            this.txtId.Name = "txtId";
-            this.txtId.Size = new System.Drawing.Size(290, 20);
-            this.txtId.TabIndex = 8;
+            this.appName.Location = new System.Drawing.Point(12, 103);
+            this.appName.Name = "appName";
+            this.appName.Size = new System.Drawing.Size(290, 20);
+            this.appName.TabIndex = 8;
             // 
             // label5
             // 
@@ -156,19 +157,19 @@
             this.label9.TabIndex = 20;
             this.label9.Text = "Source File Location:";
             // 
-            // textBox2
+            // projectName
             // 
-            this.textBox2.Location = new System.Drawing.Point(382, 151);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(287, 20);
-            this.textBox2.TabIndex = 18;
+            this.projectName.Location = new System.Drawing.Point(382, 151);
+            this.projectName.Name = "projectName";
+            this.projectName.Size = new System.Drawing.Size(287, 20);
+            this.projectName.TabIndex = 18;
             // 
-            // textBox3
+            // sourceFile
             // 
-            this.textBox3.Location = new System.Drawing.Point(382, 103);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(290, 20);
-            this.textBox3.TabIndex = 17;
+            this.sourceFile.Location = new System.Drawing.Point(382, 103);
+            this.sourceFile.Name = "sourceFile";
+            this.sourceFile.Size = new System.Drawing.Size(290, 20);
+            this.sourceFile.TabIndex = 17;
             // 
             // label10
             // 
@@ -179,12 +180,12 @@
             this.label10.TabIndex = 24;
             this.label10.Text = "Class Name:";
             // 
-            // textBox4
+            // className
             // 
-            this.textBox4.Location = new System.Drawing.Point(382, 200);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(287, 20);
-            this.textBox4.TabIndex = 23;
+            this.className.Location = new System.Drawing.Point(382, 200);
+            this.className.Name = "className";
+            this.className.Size = new System.Drawing.Size(287, 20);
+            this.className.TabIndex = 23;
             // 
             // label11
             // 
@@ -195,12 +196,12 @@
             this.label11.TabIndex = 26;
             this.label11.Text = "Method Name:";
             // 
-            // textBox5
+            // methodName
             // 
-            this.textBox5.Location = new System.Drawing.Point(382, 245);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(287, 20);
-            this.textBox5.TabIndex = 25;
+            this.methodName.Location = new System.Drawing.Point(382, 245);
+            this.methodName.Name = "methodName";
+            this.methodName.Size = new System.Drawing.Size(287, 20);
+            this.methodName.TabIndex = 25;
             // 
             // label7
             // 
@@ -211,12 +212,12 @@
             this.label7.TabIndex = 28;
             this.label7.Text = "Line Number:";
             // 
-            // textBox1
+            // lineNumber
             // 
-            this.textBox1.Location = new System.Drawing.Point(382, 291);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(287, 20);
-            this.textBox1.TabIndex = 27;
+            this.lineNumber.Location = new System.Drawing.Point(382, 291);
+            this.lineNumber.Name = "lineNumber";
+            this.lineNumber.Size = new System.Drawing.Size(287, 20);
+            this.lineNumber.TabIndex = 27;
             // 
             // label12
             // 
@@ -227,44 +228,45 @@
             this.label12.TabIndex = 30;
             this.label12.Text = "Error or Error Message Displayed:";
             // 
-            // textBox6
+            // errorMess
             // 
-            this.textBox6.Location = new System.Drawing.Point(382, 338);
-            this.textBox6.Multiline = true;
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(287, 149);
-            this.textBox6.TabIndex = 29;
+            this.errorMess.Location = new System.Drawing.Point(382, 338);
+            this.errorMess.Multiline = true;
+            this.errorMess.Name = "errorMess";
+            this.errorMess.Size = new System.Drawing.Size(287, 149);
+            this.errorMess.TabIndex = 29;
             // 
-            // Form3
+            // WhiteBoxTester
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(717, 580);
             this.Controls.Add(this.label12);
-            this.Controls.Add(this.textBox6);
+            this.Controls.Add(this.errorMess);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.lineNumber);
             this.Controls.Add(this.label11);
-            this.Controls.Add(this.textBox5);
+            this.Controls.Add(this.methodName);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.className);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.projectName);
+            this.Controls.Add(this.sourceFile);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.txtAddress);
-            this.Controls.Add(this.txtName);
-            this.Controls.Add(this.txtId);
+            this.Controls.Add(this.bugOcc);
+            this.Controls.Add(this.bugDesc);
+            this.Controls.Add(this.appName);
             this.Controls.Add(this.label1);
-            this.Name = "Form3";
-            this.Text = "Form3";
+            this.Name = "WhiteBoxTester";
+            this.Text = "White Box Tester";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form3_FormClosed);
+            this.Load += new System.EventHandler(this.WhiteBoxTester_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -277,22 +279,22 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtAddress;
-        private System.Windows.Forms.TextBox txtName;
-        private System.Windows.Forms.TextBox txtId;
+        private System.Windows.Forms.TextBox bugOcc;
+        private System.Windows.Forms.TextBox bugDesc;
+        private System.Windows.Forms.TextBox appName;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox projectName;
+        private System.Windows.Forms.TextBox sourceFile;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox className;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox methodName;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox lineNumber;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox errorMess;
     }
 }

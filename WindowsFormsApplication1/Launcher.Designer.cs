@@ -1,6 +1,6 @@
 ﻿namespace WindowsFormsApplication1
 {
-    partial class Form2
+    partial class Launcher
     {
         /// <summary>
         /// Required designer variable.
@@ -103,9 +103,8 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.label1);
             this.Name = "Form2";
-            this.Text = "Form2";
+            this.Text = "Launcher";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form2_FormClosed);
-            this.Load += new System.EventHandler(this.Form2_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
