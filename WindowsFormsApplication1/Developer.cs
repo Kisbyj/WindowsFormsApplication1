@@ -149,6 +149,8 @@ namespace WindowsFormsApplication1
                     bugTableList.Items.Add("Is the Bug fixed? " + mySqlDataReader["BugStatus"]);
                     bugTableList.Items.Add("Bug Fix Details: " + mySqlDataReader["BugFixDetails"]);
                     bugTableList.Items.Add("--------------------END----------------------");
+
+                    //Populates the update field with pre-existing information (If already inputted).
                     bugFixDetailstxt.Text = mySqlDataReader["BugFixDetails"].ToString();
                 }
             }
