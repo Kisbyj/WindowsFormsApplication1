@@ -65,6 +65,9 @@
             this.bugTableList = new System.Windows.Forms.ListBox();
             this.bugList = new System.Windows.Forms.ListBox();
             this.populateButton = new System.Windows.Forms.Button();
+            this.SourceCodeBox = new System.Windows.Forms.TextBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.DisplayButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -179,7 +182,7 @@
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(1467, 37);
+            this.label17.Location = new System.Drawing.Point(1382, 37);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(61, 13);
             this.label17.TabIndex = 67;
@@ -190,9 +193,9 @@
             this.label12.AutoSize = true;
             this.label12.Location = new System.Drawing.Point(382, 306);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(178, 13);
+            this.label12.Size = new System.Drawing.Size(72, 13);
             this.label12.TabIndex = 88;
-            this.label12.Text = "Error Message and/or Source Code:";
+            this.label12.Text = "Source Code:";
             // 
             // errorMess
             // 
@@ -366,7 +369,7 @@
             this.bugTableList.HorizontalScrollbar = true;
             this.bugTableList.Location = new System.Drawing.Point(1305, 84);
             this.bugTableList.Name = "bugTableList";
-            this.bugTableList.Size = new System.Drawing.Size(393, 420);
+            this.bugTableList.Size = new System.Drawing.Size(249, 420);
             this.bugTableList.TabIndex = 89;
             // 
             // bugList
@@ -389,11 +392,41 @@
             this.populateButton.UseVisualStyleBackColor = true;
             this.populateButton.Click += new System.EventHandler(this.populateButton_Click);
             // 
+            // SourceCodeBox
+            // 
+            this.SourceCodeBox.Location = new System.Drawing.Point(1560, 84);
+            this.SourceCodeBox.Multiline = true;
+            this.SourceCodeBox.Name = "SourceCodeBox";
+            this.SourceCodeBox.Size = new System.Drawing.Size(296, 420);
+            this.SourceCodeBox.TabIndex = 92;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(1662, 37);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(69, 13);
+            this.label18.TabIndex = 93;
+            this.label18.Text = "Source Code";
+            // 
+            // DisplayButton
+            // 
+            this.DisplayButton.Location = new System.Drawing.Point(1665, 510);
+            this.DisplayButton.Name = "DisplayButton";
+            this.DisplayButton.Size = new System.Drawing.Size(104, 42);
+            this.DisplayButton.TabIndex = 94;
+            this.DisplayButton.Text = "Display Source Code";
+            this.DisplayButton.UseVisualStyleBackColor = true;
+            this.DisplayButton.Click += new System.EventHandler(this.DisplayButton_Click);
+            // 
             // Developer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1721, 571);
+            this.ClientSize = new System.Drawing.Size(1875, 571);
+            this.Controls.Add(this.DisplayButton);
+            this.Controls.Add(this.label18);
+            this.Controls.Add(this.SourceCodeBox);
             this.Controls.Add(this.populateButton);
             this.Controls.Add(this.bugList);
             this.Controls.Add(this.bugTableList);
@@ -478,5 +511,8 @@
         private System.Windows.Forms.ListBox bugTableList;
         private System.Windows.Forms.ListBox bugList;
         private System.Windows.Forms.Button populateButton;
+        private System.Windows.Forms.TextBox SourceCodeBox;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Button DisplayButton;
     }
 }

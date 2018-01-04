@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ColorCode;
 
 namespace WindowsFormsApplication1
 {
@@ -152,6 +153,7 @@ namespace WindowsFormsApplication1
 
                     //Populates the update field with pre-existing information (If already inputted).
                     bugFixDetailstxt.Text = mySqlDataReader["BugFixDetails"].ToString();
+                    SourceCodeBox.Text = mySqlDataReader["ErrorMessage"].ToString();
                 }
             }
             
@@ -219,7 +221,16 @@ namespace WindowsFormsApplication1
             }
         }
 
-    
+        /// <summary>
+        /// The code for launchng and displaying the source code submitted to the table
+        /// </summary>
+        public void ColourCodeCSharp()
+        {
+            string sourceCode = new CodeColorizer().Colorize(SourceCodeBox.Text, Languages.CSharp);
+            string html = ("<!doctype html><head><meta charset=\"utf-8\" <title> Code Snippet </title> </head> <body>" + sourceCode + "</body></html>");
+            System.IO.File.WriteAllText(@"F:\WindowsFormsApplication1\WindowsFormsApplication1\SourceCode.html", html);
+        }
+
         private void Form4_Load(object sender, EventArgs e)
         {
 
@@ -296,6 +307,14 @@ namespace WindowsFormsApplication1
         private void Form4_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void DisplayButton_Click(object sender, EventArgs e)
+        {
+
+          ColourCodeCSharp();
+          System.Diagnostics.Process.Start(@"F:\WindowsFormsApplication1\WindowsFormsApplication1\SourceCode.html");
+
         }
     }
 }
